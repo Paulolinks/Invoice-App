@@ -1,0 +1,12 @@
+/* Define hover styles for list items */
+.list-group-item:hover {
+  background-color: #f0f0f0; /* Change the background color on hover */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+.hidden-form {
+  display: none;
+}
+.list-group-item i {
+  margin-right: 20px; /* Adjust the margin as needed */
+  color: red;
+}

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Seu cabeçalho -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Cool Season Estimate</title>
+  </head>
+  <body>
+    <!-- MESSAGE DE SUCESSO -->
+    <div class="alert alert-success" role="alert">
+      A simple success alert—check it out!
+    </div>
+    <!-- Header -->
+    <header class="p-3 mb-3 border-bottom">
+      <!-- Seu cabeçalho -->
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
+          >
+            <svg
+              class="bi me-2"
+              width="40"
+              height="32"
+              role="img"
+              aria-label="Bootstrap"
+            >
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="#" class="nav-link px-2 link-secondary">Overview</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 link-body-emphasis">Customers</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 link-body-emphasis">Products</a>
+            </li>
+          </ul>
+
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+
+          <div class="dropdown text-end">
+            <a
+              href="#"
+              class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://github.com/mdo.png"
+                alt="mdo"
+                width="32"
+                height="32"
+                class="rounded-circle"
+              />
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Container principal -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-3">
+          <div
+            class="d-flex flex-column flex-shrink-0 p-3 text-bg-white"
+            style="width: 280px"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+            >
+              <svg class="bi pe-none me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+              <span class="fs-4">Sidebar</span>
+            </a>
+            <hr />
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-dark" aria-current="page">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#home"></use>
+                  </svg>
+                  Estimate
+                </a>
+              </li>
+              <li>
+                <a href="invoice.html" class="nav-link text-dark">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2"></use>
+                  </svg>
+                  Invoice
+                </a>
+              </li>
+              <li>
+                <a href="client.html" class="nav-link text-dark">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#table"></use>
+                  </svg>
+                  Cliente
+                </a>
+              </li>
+              <li>
+                <a href="item.html" class="nav-link text-dark">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#grid"></use>
+                  </svg>
+                  Items
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link active">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#people-circle"></use>
+                  </svg>
+                  New Estimate
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown">
+              <a
+                href="#"
+                class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="https://github.com/mdo.png"
+                  alt=""
+                  width="32"
+                  height="32"
+                  class="rounded-circle me-2"
+                />
+                <strong>mdo</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTEUDO  AQUI -->
+
+        <!-- Tabela à direita do sidebar -->
+        <div class="col">
+          
+            <!-- <button type="button" class="btn btn-outline-success">
+              New Estimate
+            </button> -->
+          </form>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <!-- Buttons -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1>Invoice</h1>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h4>From:</h4>
+                      <p>
+                        Your Company Name<br />123 Main Street<br />Anytown, USA
+                        12345
+                      </p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                      <h4>To:</h4>
+
+                      
+                      <!-- Button ADD new Customer-->
+                      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" style="width: 100px; height: 100px; font-size: 15px; border: 1px solid">ADD NEW Customer</button>
+
+                      
+
+
+                     
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form HERE -->
+        <form class="row g-3" action="/add" method="post">
+          <h2 class="mb-3">Basic Information</h2>
+  
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <!-- INPUT FORM-->
+              <!-- <input type="text" placeholder="Cliente Name" name="nameIp" /> -->
+              <input type="text" class="form-control" name="nameIp" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phoneMobile">Phone (Mobile)</label>
+              <!-- INPUT FORM-->
+              <input
+                type="text"
+                class="form-control"
+                id="phoneMobile"
+                name="phoneMobile"
+              />
+            </div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <!-- INPUT FORM-->
+              <input type="text" class="form-control" id="email" name="email" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phoneOther">Phone (Other)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phoneOther"
+                name="phoneOther"
+              />
+            </div>
+          </div>
+  
+          <h2 class="mt-4 mb-3">Billing Information</h2>
+  
+          <div class="col-md-6">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" />
+          </div>
+          <div class="col-md-6">
+            <label for="address2">Address 2</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address2"
+              name="address2"
+            />
+          </div>
+  
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" name="city" />
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <label for="zip">Zip / Postal Code</label>
+            <input type="text" class="form-control" id="zip" name="zip" />
+          </div>
+  
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="state">State</label>
+              <input type="text" class="form-control" id="state" name="state" />
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="privateNote" class="form-label">Private Note</label>
+            <textarea
+              class="form-control"
+              name="privateNote"
+              id="privateNote"
+              rows="3"
+            ></textarea>
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- Form end HERE -->
+
+
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+                      <!-- Button ADD new Customer end-->
+
+                      
+                    </div>
+                  </div>
+                  <table class="table table-bordered mt-3">
+                    <thead>
+                      <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th class="text-right">Total</th>
+                      </tr>
+                    </thead>
+                    
+                  </table>
+
+                  <!--  ADD NEW ITEM HERE-->
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-success" type="button">ADD LINE ITEM</button>
+                  </div>
+                 <!-- Note For client-->
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">NOTE:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                 <!-- IMAGE UPLOAD-->
+                 <div class="mb-3">
+                    <label for="formFile" class="form-label">Image upload</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                </div>
+                <!-- /.col-md-12 -->
+              </div>
+              <!-- /.row -->
+            </div>
+
+            <!-- Buttons end-->
+          </div>
+          <table class="table">
+            <!-- Conteúdo da Tabela 1 aqui -->
+            <p>Conteúdo da Tabela 1 aqui</p>
+          </table>
+        </div>
+
+        <!-- Tabela 2 à direita da primeira tabela -->
+        <div class="col">
+        
+          <table class="table">
+            <!-- Conteúdo da Tabela 2 aqui -->
+            <p>Conteúdo da Tabela 1 aqui</p>
+          </table>
+        </div>
+        <!-- CONTEUDO  AQUI -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+      >
+        <!-- Seu rodapé -->
+        <div class="col-md-4 d-flex align-items-center">
+          <a
+            href="/"
+            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          >
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary"
+            >© 2023 Cool Season, Inc</span
+          >
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#"
+              ><svg class="bi" width="24" height="24">
+                <use xlink:href="#twitter"></use></svg
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#"
+              ><svg class="bi" width="24" height="24">
+                <use xlink:href="#instagram"></use></svg
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#"
+              ><svg class="bi" width="24" height="24">
+                <use xlink:href="#facebook"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

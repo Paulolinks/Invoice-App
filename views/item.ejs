@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <title>Cool Season Item</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <!-- Container principal -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-3">
+          <div
+            class="d-flex flex-column flex-shrink-0 p-3 text-bg-white"
+            style="width: 280px"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+            >
+              <svg class="bi pe-none me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+              <span class="fs-4">Sidebar</span>
+            </a>
+            <hr />
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="/" class="nav-link text-dark" aria-current="page">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#home"></use>
+                  </svg>
+                  Estimate
+                </a>
+              </li>
+              <li>
+                <a href="/invoice" class="nav-link text-dark">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2"></use>
+                  </svg>
+                  Invoice
+                </a>
+              </li>
+              <li>
+                <a href="/client" class="nav-link text-dark">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#table"></use>
+                  </svg>
+                  Client
+                </a>
+              </li>
+              <li>
+                <a href="/item" class="nav-link active">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#grid"></use>
+                  </svg>
+                  Items
+                </a>
+              </li>
+              <li>
+                <a href="/estimate" class="nav-link text-dark">
+                  <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#people-circle"></use>
+                  </svg>
+                  New Estimate
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown">
+              <a
+                href="#"
+                class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="https://github.com/mdo.png"
+                  alt=""
+                  width="32"
+                  height="32"
+                  class="rounded-circle me-2"
+                />
+                <strong>mdo</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Your main content for this page -->
+        <!-- Tabela à direita do sidebar -->
+        <div class="col">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <!-- <button type="button" class="btn btn-outline-success">
+            New Estimate
+          </button> -->
+          </form>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <!-- item list -->
+
+            <div
+              class="card"
+              style="height: 400px; width: 400px; overflow-y: scroll"
+            >
+              <!-- Your client-specific content for this page -->
+
+              <div class="card-header">ITEMS</div>
+              <ul class="list-group list-group-flush">
+                <% item.forEach(function(item) { %>
+                <li class="list-group-item">
+                  <i
+                    data-bs-toggle="modal"
+                    data-bs-target="#editFormModal"
+                    data-item_name="<%= item.item_name %>"
+                    data-description="<%= item.description %>"
+                    data-taxe="<%= item.taxe %>"
+                    data-rate="<%= item.rate %>"
+                    class="fas fa-edit edit-item"
+                    data-id="<%= item.id %>"
+                  ></i>
+                  <i
+                    class="fas fa-trash-alt delete-item"
+                    data-id="<%= item.id %>"
+                  ></i>
+                  <%= item.item_name %>
+                </li>
+
+                <% }); %>
+                <!-- <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">An item</li> -->
+              </ul>
+            </div>
+            <!-- Div to Appear invoives-->
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                Some placeholder content for the collapse component. This panel
+                is hidden by default but revealed when the user activates the
+                relevant trigger.
+              </div>
+            </div>
+            <!-- Buttons end-->
+          </div>
+          <table class="table">
+            <!-- Conteúdo da Tabela 1 aqui -->
+            <p>Conteúdo da Tabela 3 aqui</p>
+          </table>
+        </div>
+
+        <!-- Tabela 2 à direita da primeira tabela -->
+        <div class="col">
+          <!-- Button ADD new ITEM-->
+          <!-- Button ADD new ITEM-->
+          <button
+            type="button"
+            class="btn btn-outline-success"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo"
+            style="
+              width: 100px;
+              height: 100px;
+              font-size: 15px;
+              border: 1px solid;
+            "
+          >
+            ADD NEW ITEM
+          </button>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    ADD NEW ITEM
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Form HERE -->
+                  <form action="/add_Item" method="post">
+                    <div class="col-md-5">
+                      <label for="item_name" class="form-label"
+                        >Item Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="item_name"
+                        name="item_name"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-5">
+                      <label for="description" class="form-label"
+                        >Description</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="description"
+                        name="description"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-5">
+                      <label for="rate" class="form-label">Rate</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="rate"
+                        name="rate"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-5">
+                      <label for="taxe" class="form-label">Taxes</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="taxe"
+                        name="taxe"
+                        required
+                      />
+                    </div>
+
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        Add Item
+                      </button>
+                    </div>
+                  </form>
+                  <!-- Form end HERE -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table class="table">
+            <!-- Conteúdo da Tabela 2 aqui -->
+            <!-- FORM  TO HIDDEN  AQUIIIIIIII-->
+            <!-- EDIT FORM MODAL UPDATE-->
+            <!-- EDIT FORM MODAL UPDATE-->
+            <div
+              class="modal fade"
+              id="editFormModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      EDIT ITEM
+                    </h1>
+
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body" id="editFormModal">
+                    <!-- Form HERE -->
+                    <form action="/edit_Item" method="post">
+                      <div class="col-md-5">
+                        <input
+                          type="hidden"
+                          name="clientId"
+                          id="edit-form-itemId"
+                          value=""
+                        />
+                        <label for="item_name" class="form-label"
+                          >Item Name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="edit-form-item_name"
+                          name="item_name"
+                          required
+                        />
+                      </div>
+
+                      <div class="col-md-5">
+                        <label for="description" class="form-label"
+                          >Description</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="edit-form-description"
+                          name="description"
+                          required
+                        />
+                      </div>
+
+                      <div class="col-md-5">
+                        <label for="rate" class="form-label">Rate</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="edit-form-rate"
+                          name="rate"
+                          required
+                        />
+                      </div>
+
+                      <div class="col-md-5">
+                        <label for="taxe" class="form-label">Taxes</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="edit-form-taxe"
+                          name="taxe"
+                          required
+                        />
+                      </div>
+
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                          Edit Item
+                        </button>
+                      </div>
+                    </form>
+                    <!-- Form end HERE -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- FORM  TO HIDDEN AKIIIIIIII-->
+
+            <p>Conteúdo da Tabela 1 aqui</p>
+          </table>
+        </div>
+        <!-- CONTEUDO  AQUI -->
+      </div>
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
